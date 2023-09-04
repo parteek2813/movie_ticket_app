@@ -20,13 +20,6 @@ import {
 import {upcomingMovies, popularMovies, searchMovies} from './src/api/apicalls';
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  console.log(searchMovies('Avengers'));
   return (
     <SafeAreaView>
       <Text> Working</Text>
