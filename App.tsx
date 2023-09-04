@@ -17,6 +17,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {upcomingMovies, popularMovies, searchMovies} from './src/api/apicalls';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -25,6 +26,7 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  console.log(searchMovies('Avengers'));
   return (
     <SafeAreaView>
       <Text> Working</Text>
