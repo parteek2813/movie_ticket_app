@@ -17,16 +17,23 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import {upcomingMovies, popularMovies, searchMovies} from './src/api/apicalls';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import TabNavigator from './src/navigators/TabNavigator';
+import MovieDetailsScreen from './src/screens/MovieDetailsScreen';
+import SeatBookingScreen from './src/screens/SeatBookingScreen';
+
+const Stack = createNativeStackNavigator();
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <Text> Working</Text>
-      <CustomIcon name="search" size={25} />
-      <CustomIcon name="ticket" size={25} />
-      <Text>Hello Everyone</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Tab" component={TabNavigator} />
+        <Stack.Screen name="MovieDetails" component={MovieDetailsScreen} />
+        <Stack.Screen name="SeatBooking" component={SeatBookingScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
