@@ -102,10 +102,7 @@ const HomeScreen = ({navigation}: any) => {
     );
   }
   return (
-    <ScrollView
-      style={styles.container}
-      bounces={false}
-      contentContainerStyle={styles.scrollViewContainer}>
+    <ScrollView style={styles.container} bounces={false}>
       <StatusBar hidden />
 
       <View style={styles.InputHeaderContainer}>
@@ -113,7 +110,48 @@ const HomeScreen = ({navigation}: any) => {
       </View>
 
       <CategoryHeader title={'Now Playing'} />
+
+      <FlatList
+        data={nowPlayingMoviesList}
+        keyExtractor={(item: any) => item.id}
+        horizontal
+        contentContainerStyle={styles.containerGap36}
+        renderItem={({item, index}) => (
+          <SubMovieCard
+            shouldMarginatedAtEnd={true}
+            cardFunction={() => {
+              navigation.push('MovieDetails', {movieid: item.id});
+            }}
+            cardWidth={width / 3}
+            isFirst={index === 0 ? true : false}
+            isLast={index === upcomingMoviesList?.length - 1 ? true : false}
+            title={item.original_title}
+            imagePath={baseImagePath('w342', item.poster_path)}
+          />
+        )}
+      />
+
       <CategoryHeader title={'Popular'} />
+
+      <FlatList
+        data={popularMoviesList}
+        keyExtractor={(item: any) => item.id}
+        horizontal
+        contentContainerStyle={styles.containerGap36}
+        renderItem={({item, index}) => (
+          <SubMovieCard
+            shouldMarginatedAtEnd={true}
+            cardFunction={() => {
+              navigation.push('MovieDetails', {movieid: item.id});
+            }}
+            cardWidth={width / 3}
+            isFirst={index === 0 ? true : false}
+            isLast={index === upcomingMoviesList?.length - 1 ? true : false}
+            title={item.original_title}
+            imagePath={baseImagePath('w342', item.poster_path)}
+          />
+        )}
+      />
       <CategoryHeader title={'Upcoming'} />
 
       <FlatList
@@ -122,7 +160,17 @@ const HomeScreen = ({navigation}: any) => {
         horizontal
         contentContainerStyle={styles.containerGap36}
         renderItem={({item, index}) => (
-          <SubMovieCard title={item.original_title} />
+          <SubMovieCard
+            shouldMarginatedAtEnd={true}
+            cardFunction={() => {
+              navigation.push('MovieDetails', {movieid: item.id});
+            }}
+            cardWidth={width / 3}
+            isFirst={index == 0 ? true : false}
+            isLast={index == upcomingMoviesList?.length - 1 ? true : false}
+            title={item.original_title}
+            imagePath={baseImagePath('w342', item.poster_path)}
+          />
         )}
       />
     </ScrollView>
