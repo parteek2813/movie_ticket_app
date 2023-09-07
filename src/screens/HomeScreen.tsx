@@ -123,6 +123,7 @@ const HomeScreen = ({navigation}: any) => {
         snapToInterval={width * 0.7 + SPACING.space_36}
         horizontal
         decelerationRate={0}
+        showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.containerGap36}
         renderItem={({item, index}) => {
           if (!item.original_title) {
@@ -158,6 +159,7 @@ const HomeScreen = ({navigation}: any) => {
         keyExtractor={(item: any) => item.id}
         bounces={false}
         horizontal
+        showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.containerGap36}
         renderItem={({item, index}) => (
           <SubMovieCard
@@ -180,6 +182,7 @@ const HomeScreen = ({navigation}: any) => {
         keyExtractor={(item: any) => item.id}
         bounces={false}
         horizontal
+        showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.containerGap36}
         renderItem={({item, index}) => (
           <SubMovieCard
