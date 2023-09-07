@@ -1,4 +1,4 @@
-const apikey: string = 'fb68961958465c2b089c0d06fb626f14';
+const apikey: string = '32f27875c0b01f44d72bc01bac00d104';
 export const baseImagePath = (size: string, path: string) => {
   return `https://image.tmdb.org/t/p/${size}${path}`;
 };

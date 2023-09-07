@@ -65,7 +65,7 @@ const HomeScreen = ({navigation}: any) => {
       let tempNowPlaying = await getNowPlayingMoviesList();
       setNowPlayingMoviesList([
         {id: 'dummy1'},
-        tempNowPlaying.results,
+        ...tempNowPlaying.results,
         {id: 'dummy2'},
       ]);
 
@@ -122,13 +122,10 @@ const HomeScreen = ({navigation}: any) => {
         bounces={false}
         snapToInterval={width * 0.7 + SPACING.space_36}
         horizontal
+        decelerationRate={0}
         contentContainerStyle={styles.containerGap36}
         renderItem={({item, index}) => {
-          {
-            console.log(item.original_title);
-          }
           if (!item.original_title) {
-            console.log('From early return');
             return (
               <View
                 style={{

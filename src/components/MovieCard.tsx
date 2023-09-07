@@ -64,7 +64,7 @@ const MovieCard = (props: any) => {
           </Text>
 
           <View style={styles.genreContainer}>
-            {props.genre.map((item: any) => {
+            {props.genre?.map((item: any) => {
               return (
                 <View key={item} style={styles.genreBox}>
                   <Text style={styles.genreText}>{genres[item]}</Text>
