@@ -119,10 +119,12 @@ const TicketScreen = ({navigation, route}: any) => {
               <Text style={styles.subheading}>Hall</Text>
               <Text style={styles.subtitle}>02</Text>
             </View>
+
             <View style={styles.subtitleContainer}>
               <Text style={styles.subheading}>Row</Text>
               <Text style={styles.subtitle}>04</Text>
             </View>
+
             <View style={styles.subtitleContainer}>
               <Text style={styles.subheading}>Seats</Text>
               <Text style={styles.subtitle}>
